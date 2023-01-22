@@ -6,7 +6,7 @@ import os
 ARROW_LEFT = "⬅"
 ARROW_RIGHT = "➡"
 
-my_secret = os.environ['key'] # Our token for discord bot to run
+TOKEN = os.environ['key'] # Our token for discord bot to run
 
 
 intents = discord.Intents.default()
@@ -15,6 +15,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='?', 
                    intents=intents)
 
+#Bot.eve
 @bot.event
 async def on_ready():
   print('We have logged in as {0.user}'.format(bot))
@@ -85,6 +86,6 @@ async def on_reaction_add(reaction, user):
 
 
 try:
-  bot.run(my_secret)
+  bot.run(TOKEN)
 except:
   os.system("kill 1")
